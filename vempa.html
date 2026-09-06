@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#581d19">
+<title>Vempa Raju Gari Vantillu | Bhimavaram</title>
+<meta name="description" content="Vempa Raju Gari Vantillu, Balusumudi, Bhimavaram. Biryani, dine-in, takeaway and delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+<style>
+:root{--maroon:#581d19;--brown:#6b2d1a;--red:#a94029;--gold:#e9a830;--yellow:#f5b731;--cream:#fff7e8;--paper:#fffdf7;--ink:#321b16;--leaf:#263a2b;--line:#321b1625;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif;--mono:"DM Mono",monospace;--ease:cubic-bezier(.22,.61,.36,1);--ease-expo:cubic-bezier(.16,1,.3,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--sans);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit;border:0;cursor:pointer}
+img{display:block;max-width:100%}
+
+/* Custom Cursor */
+.cursor{width:12px;height:12px;border:1.5px solid var(--gold);border-radius:50%;position:fixed;pointer-events:none;z-index:99999;transition:width .3s var(--ease),height .3s var(--ease),border-color .3s,background .3s;mix-blend-mode:difference}
+.cursor.hover{width:30px;height:30px;background:var(--gold);border-color:var(--gold);opacity:.6}
+.cursor-follower{width:5px;height:5px;background:var(--gold);border-radius:50%;position:fixed;pointer-events:none;z-index:99998;transition:transform .15s var(--ease)}
+
+/* Page Loader */
+.loader{position:fixed;inset:0;background:var(--maroon);z-index:100000;display:flex;align-items:center;justify-content:center;flex-direction:column;transition:opacity .8s var(--ease),visibility .8s}
+.loader.done{opacity:0;visibility:hidden}
+.loader-text{font:600 3rem var(--serif);color:var(--cream);overflow:hidden}
+.loader-text span{display:inline-block;animation:loaderReveal .6s var(--ease) forwards;opacity:0;transform:translateY(100%)}
+.loader-bar{width:200px;height:3px;background:#ffffff20;border-radius:99px;margin-top:30px;overflow:hidden}
+.loader-bar::after{content:"";display:block;width:0;height:100%;background:var(--gold);border-radius:99px;animation:loaderFill 1.8s var(--ease-expo) forwards}
+@keyframes loaderReveal{to{opacity:1;transform:none}}
+@keyframes loaderFill{to{width:100%}}
+
+/* Noise */
+.noise{position:fixed;inset:0;z-index:9998;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* Floating Shapes */
+.float-shapes{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.float-shape{position:absolute;border-radius:50%;opacity:.04;animation:floatShape 20s ease-in-out infinite alternate}
+.float-shape:nth-child(1){width:400px;height:400px;background:var(--gold);top:-100px;right:-100px}
+.float-shape:nth-child(2){width:300px;height:300px;background:var(--brown);bottom:-80px;left:-80px;animation-delay:-5s}
+.float-shape:nth-child(3){width:250px;height:250px;background:var(--yellow);top:50%;left:50%;animation-delay:-10s}
+@keyframes floatShape{0%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.1)}100%{transform:translate(-20px,20px) scale(.95)}}
+
+.wrap{width:min(1230px,calc(100% - 48px));margin:auto}
+.eyebrow{font:500 .72rem/1 var(--mono);letter-spacing:.13em;text-transform:uppercase;margin:0}
+.title{font:600 clamp(2.7rem,5vw,5.25rem)/.94 var(--serif);letter-spacing:-.06em;color:var(--maroon)}
+.section{padding:108px 0}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:11px;padding:15px 21px;border-radius:999px;font-weight:700;font-size:.88rem;transition:transform .4s var(--ease),box-shadow .4s;position:relative;overflow:hidden}
+.btn-gold{background:var(--gold);color:var(--maroon)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 10px 30px #e9a83040}
+.btn-maroon{background:var(--maroon);color:var(--cream)}
+.btn-maroon:hover{transform:translateY(-3px);box-shadow:0 10px 30px #581d1940}
+.btn i{font-style:normal;font-size:1.2em;transition:transform .3s var(--ease);display:inline-block}
+.btn:hover i{transform:translateX(6px)}
+
+/* Header */
+header{position:fixed;z-index:9;inset:0 0 auto;transition:.5s var(--ease-expo)}
+header.scrolled{background:#fff7e8e8;backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--line)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand-text{display:flex;flex-direction:column;line-height:1.1}
+.brand-name{font:700 1.1rem var(--serif);color:var(--maroon);letter-spacing:-.03em}
+.brand-sub{font:600 .6rem var(--mono);color:var(--gold);letter-spacing:.15em;text-transform:uppercase}
+.links{display:flex;gap:27px;font-size:.84rem;font-weight:700}
+.links a{position:relative;padding:4px 0;color:var(--maroon)}
+.links a::after{content:"";position:absolute;bottom:-2px;left:0;width:0;height:2px;background:var(--gold);transition:width .4s var(--ease-expo)}
+.links a:hover::after{width:100%}
+.links a span{display:inline-block;transition:transform .3s var(--ease)}
+.links a:hover span{transform:translateY(-2px)}
+.call{padding:10px 16px;border:2px solid var(--gold);border-radius:99px;font-size:.8rem;font-weight:700;color:var(--maroon);transition:all .4s var(--ease)}
+.call:hover{background:var(--gold);color:var(--maroon)}
+.hamb{display:none;background:none}
+.hamb i{display:block;width:23px;height:2px;background:var(--ink);margin:5px;transition:transform .3s var(--ease)}
+.mobile{display:none}
+
+/* Hero */
+.hero{min-height:770px;background:linear-gradient(135deg,var(--maroon) 0%,var(--brown) 50%,var(--maroon) 100%);color:var(--cream);padding:136px 0 54px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-200px;top:90px;width:550px;height:550px;border:1px solid #fff3;border-radius:50%;animation:heroOrb 15s ease-in-out infinite alternate}
+.hero::after{content:"";position:absolute;left:-150px;bottom:-100px;width:400px;height:400px;border:1px solid #fff2;border-radius:50%;animation:heroOrb 12s ease-in-out infinite alternate-reverse}
+@keyframes heroOrb{0%{transform:translate(0,0) scale(1)}100%{transform:translate(-30px,20px) scale(1.05)}}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:35px;position:relative}
+.hero .eyebrow{color:var(--gold);margin-bottom:18px;display:inline-flex;align-items:center;gap:8px}
+.hero .eyebrow::before{content:"";width:24px;height:1px;background:var(--gold)}
+.hero h1{margin:0;font:600 clamp(3.4rem,7.2vw,8rem)/.84 var(--serif);letter-spacing:-.075em;color:var(--cream)}
+.hero h1 em{font-weight:500;color:var(--gold);font-style:italic}
+.hero-text{max-width:450px;color:#f3ded0;line-height:1.68;font-size:1.08rem;margin:29px 0}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.hero-photo{height:560px;position:relative}
+.hero-photo img{width:100%;height:100%;object-fit:cover;border-radius:52% 52% 15px 15px;animation:photoDrift 12s ease-in-out infinite alternate}
+.hero-photo:hover img{animation-play-state:paused;transform:scale(1.03)}
+.seal{position:absolute;right:-27px;bottom:36px;width:142px;height:142px;background:var(--gold);color:var(--maroon);border-radius:50%;display:grid;place-items:center;text-align:center;padding:18px;font:600 1.08rem/.95 var(--serif);transform:rotate(13deg);animation:spin 15s linear infinite;transition:transform .5s var(--ease)}
+.hero-photo:hover .seal{transform:rotate(0deg) scale(1.1)}
+.stripe{position:absolute;bottom:0;left:0;width:100%;height:7px;background:linear-gradient(90deg,var(--gold) 0%,var(--yellow) 50%,var(--gold) 100%);transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--ease-expo) 1s}
+.hero.loaded .stripe{transform:scaleX(1)}
+
+/* Ticker */
+.ticker{background:var(--gold);padding:13px 0;overflow:hidden;white-space:nowrap;color:var(--maroon);font:500 .76rem var(--mono);letter-spacing:.1em}
+.ticker span{display:inline-block;animation:marquee 20s linear infinite}
+.ticker b{padding:0 20px;color:var(--brown)}
+
+/* Prominent Logo Section */
+.logo-section{background:var(--gold);padding:60px 0;overflow:hidden;position:relative}
+.logo-section::before{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:400px;height:400px;background:var(--maroon);border-radius:50%;opacity:.06}
+.logo-showcase{text-align:center;position:relative;z-index:1}
+.logo-text-display{display:flex;flex-direction:column;align-items:center;gap:5px}
+.logo-vempa{font:700 clamp(3rem,8vw,6rem)/1 var(--serif);color:var(--maroon);letter-spacing:.05em;text-shadow:3px 3px 0 var(--cream),6px 6px 0 #581d1920}
+.logo-gari{font:600 clamp(1.2rem,3vw,2rem)/1 var(--mono);color:var(--brown);letter-spacing:.25em;text-transform:uppercase;border-top:3px solid var(--maroon);border-bottom:3px solid var(--maroon);padding:10px 30px}
+
+/* Welcome */
+.welcome{display:grid;grid-template-columns:.72fr 1.28fr;gap:12%;align-items:end}
+.welcome .eyebrow{color:var(--gold)}
+.welcome .title{margin:0;max-width:750px}
+.welcome p:last-child{max-width:555px;margin:22px 0 0;line-height:1.72;color:#5a5148;font-size:1.05rem}
+
+/* Specials */
+.specials{background:var(--paper);border-block:1px solid var(--line)}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:40px}
+.section-head .title{margin:15px 0 0}
+.link{font-size:.9rem;font-weight:700;border-bottom:2px solid var(--gold);padding-bottom:4px;white-space:nowrap;color:var(--maroon);transition:color .3s}
+.link:hover{color:var(--gold)}
+.food-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.food{position:relative;transition:transform .5s var(--ease-expo)}
+.food:hover{transform:translateY(-12px)}
+.food-pic{height:397px;overflow:hidden;border-radius:210px 210px 14px 14px;position:relative}
+.food:nth-child(2) .food-pic{border-radius:14px}
+.food:nth-child(3) .food-pic{border-radius:14px 14px 210px 210px}
+.food-pic::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,#00000040);opacity:0;transition:opacity .5s var(--ease)}
+.food:hover .food-pic::after{opacity:1}
+.food-pic img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease-expo)}
+.food:hover img{transform:scale(1.1)}
+.number{position:absolute;top:13px;left:13px;width:37px;height:37px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:var(--maroon);font:500 .7rem var(--mono);z-index:2;transition:transform .4s var(--ease),background .3s}
+.food:hover .number{transform:scale(1.15) rotate(-10deg);background:var(--maroon);color:var(--gold)}
+.food-info{display:flex;justify-content:space-between;gap:10px;padding:15px 2px}
+.food h3{margin:0;font:600 1.4rem var(--serif);letter-spacing:-.045em;color:var(--maroon)}
+.food p{margin:5px 0 0;color:#777067;font-size:.83rem}
+.tag{font:500 .75rem var(--mono);white-space:nowrap;color:var(--gold)}
+.note{padding:14px 17px;margin-top:30px;border-left:3px solid var(--gold);background:#fff7e0;font-size:.88rem;line-height:1.55;color:var(--maroon)}
+
+/* Menu Extra */
+.menu-extra{margin-top:35px;padding:28px 32px;background:linear-gradient(135deg,#fdf8f0,#fef6e4);border-radius:16px;border:1px solid var(--gold)30;position:relative;overflow:hidden}
+.menu-extra::before{content:"MENU";position:absolute;top:-20px;right:-20px;font:800 6rem var(--serif);color:var(--maroon)08;letter-spacing:.05em;pointer-events:none}
+.menu-item{display:flex;align-items:center;padding:13px 0;border-bottom:1px dashed var(--line);transition:transform .3s var(--ease),background .3s;padding-left:12px;padding-right:12px;border-radius:8px;margin:0 -12px}
+.menu-item:last-child{border-bottom:none}
+.menu-item:hover{background:var(--gold)10;transform:translateX(8px)}
+.menu-name{font:600 .95rem var(--sans);color:var(--ink);white-space:nowrap}
+.menu-dots{flex:1;border-bottom:1.5px dotted var(--line);margin:0 12px;min-width:40px}
+.menu-price{font:700 .9rem var(--mono);color:var(--gold);white-space:nowrap}
+
+/* Featured Badge */
+.food:first-child{position:relative}
+.food:first-child::before{content:"★ SIGNATURE DISH";position:absolute;top:-12px;left:20px;z-index:5;background:linear-gradient(135deg,var(--gold),var(--yellow));color:var(--maroon);font:700 .6rem var(--mono);letter-spacing:.1em;padding:6px 14px;border-radius:20px;box-shadow:0 4px 15px #e9a83040}
+
+/* Story */
+.story{background:linear-gradient(135deg,var(--maroon),var(--brown));color:var(--cream);overflow:hidden}
+.story-grid{display:grid;grid-template-columns:1fr 1fr;gap:10%;align-items:center}
+.story .eyebrow{color:var(--gold)}
+.story .title{color:var(--cream);margin:17px 0 22px}
+.story p:not(.eyebrow){line-height:1.72;color:#dbe0d2;max-width:470px}
+.story-photo{position:relative}
+.story-photo img{width:100%;height:510px;object-fit:cover;border-radius:16px 48% 48% 16px;transition:transform .8s var(--ease-expo)}
+.story-photo:hover img{transform:scale(1.03)}
+.story-photo::after{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(120deg,transparent 35%,#fff6 49%,transparent 63%);transform:translateX(-150%);animation:shine 7s var(--ease) infinite}
+.facts{display:flex;gap:31px;margin-top:32px}
+.fact{padding-left:13px;border-left:2px solid var(--gold);transition:transform .4s var(--ease)}
+.fact:hover{transform:translateX(5px)}
+.fact strong{display:block;font:600 2rem/.95 var(--serif);color:var(--gold)}
+.fact span{font-size:.74rem;color:#d4d8cc}
+
+/* Services */
+.service{background:var(--cream)}
+.service-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.service-card{padding:37px;border:1px solid var(--line);background:var(--paper);transition:transform .5s var(--ease-expo),box-shadow .5s;position:relative;overflow:hidden}
+.service-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--gold),var(--yellow));transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease-expo)}
+.service-card:hover::before{transform:scaleX(1)}
+.service-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px #321b1618}
+.service-card b{display:block;width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--maroon);text-align:center;padding-top:10px;font:500 .7rem var(--mono);transition:transform .4s var(--ease),background .3s}
+.service-card:hover b{transform:rotate(-10deg) scale(1.1);background:var(--maroon);color:var(--gold)}
+.service-card h3{margin:21px 0 8px;font:600 2rem var(--serif);letter-spacing:-.05em;color:var(--maroon)}
+.service-card p{margin:0;line-height:1.65;color:#625c54}
+
+/* Hours */
+.hours-section{background:linear-gradient(135deg,var(--gold),var(--yellow));text-align:center}
+.hours-section .title{color:var(--maroon)}
+.hours-section .eyebrow{color:var(--brown)}
+.hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;max-width:700px;margin:40px auto 0}
+.hours-card{padding:35px 30px;border-radius:16px;border:2px solid var(--maroon)30;background:var(--cream);position:relative;overflow:hidden;transition:transform .4s var(--ease),box-shadow .4s}
+.hours-card:hover{transform:translateY(-5px);box-shadow:0 15px 30px #581d1920}
+.hours-card::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:var(--maroon);transform:scaleX(0);transform-origin:left;transition:transform .5s var(--ease-expo)}
+.hours-card:hover::before{transform:scaleX(1)}
+.hours-card h3{font:600 1.3rem var(--serif);color:var(--maroon);margin:0 0 8px}
+.hours-card .day{font:500 .75rem var(--mono);color:var(--gold);text-transform:uppercase;letter-spacing:.1em;margin-bottom:15px;display:block}
+.hours-card .time{font:700 1.8rem var(--serif);color:var(--ink);display:block;margin-bottom:5px}
+.hours-card .note-text{font-size:.82rem;color:#777067;margin:0}
+
+/* Visit */
+.visit{background:var(--maroon);text-align:center;overflow:hidden;color:var(--cream)}
+.visit .title{max-width:790px;margin:17px auto 20px;color:var(--cream)}
+.visit p:not(.eyebrow){max-width:580px;margin:0 auto 29px;line-height:1.65;color:#f3ded0}
+.visit .eyebrow{color:var(--gold)}
+.address{margin:42px auto 0;max-width:620px;padding:19px;border-top:1px solid var(--gold)44;border-bottom:1px solid var(--gold)44;display:flex;justify-content:space-between;gap:20px;text-align:left}
+.address strong{font:600 1.2rem var(--serif);color:var(--gold)}
+.address span{display:block;font-size:.82rem;line-height:1.5;margin-top:3px;color:#f3ded0}
+.address a{align-self:center;font-weight:700;font-size:.85rem;white-space:nowrap;color:var(--gold);transition:color .3s}
+.address a:hover{color:var(--yellow)}
+.plate-art{width:min(570px,84vw);height:135px;margin:65px auto 0;background:var(--cream);border-radius:50% 50% 7px 7px;box-shadow:0 14px 0 var(--gold);position:relative}
+.plate-art::before{content:"";position:absolute;left:calc(50% - 58px);top:-70px;width:116px;height:116px;border-radius:50%;background:var(--gold);border:7px solid var(--maroon);box-shadow:inset 0 0 0 14px var(--cream)}
+.plate-art::after{content:"♨";position:absolute;left:calc(50% - 15px);top:-59px;font-size:30px;color:var(--maroon);animation:steam 2.2s ease-in-out infinite}
+
+/* Footer */
+footer{background:linear-gradient(135deg,var(--maroon),var(--brown));color:var(--cream);padding:58px 0 25px}
+.foot-top{display:flex;justify-content:space-between;gap:45px;padding-bottom:47px;border-bottom:1px solid var(--gold)33}
+.foot-title{margin:18px 0 0;max-width:460px;font:600 clamp(2.4rem,4vw,4rem)/.95 var(--serif);letter-spacing:-.065em;color:var(--cream)}
+.foot-links{display:flex;gap:60px}
+.foot-links h4{margin:0 0 12px;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+.foot-links a{display:block;font-size:.87rem;margin:8px 0;color:#eadbd0;transition:color .3s,transform .3s var(--ease)}
+.foot-links a:hover{color:var(--gold);transform:translateX(4px)}
+.foot-bottom{display:flex;justify-content:space-between;padding-top:21px;color:#e3c8bb;font-size:.73rem}
+
+/* Reveal Animations - REPEATING */
+[data-reveal]{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease-expo),transform .9s var(--ease-expo)}
+[data-reveal].in{opacity:1;transform:none}
+[data-reveal="left"]{transform:translateX(-60px)}
+[data-reveal="left"].in{transform:none}
+[data-reveal="right"]{transform:translateX(60px)}
+[data-reveal="right"].in{transform:none}
+[data-reveal="scale"]{transform:scale(.9)}
+[data-reveal="scale"].in{transform:none}
+
+/* Section Slide - REPEATING */
+main>.section{opacity:0;transform:translateX(-8vw);transition:opacity .8s var(--ease),transform .95s var(--ease-expo)}
+main>.section:nth-of-type(even){transform:translateX(8vw)}
+main>.section.slide-active{opacity:1;transform:none}
+
+/* Keyframes */
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes photoDrift{to{transform:scale(1.07);object-position:56% 50%}}
+@keyframes spin{to{transform:rotate(373deg)}}
+@keyframes shine{0%,62%{transform:translateX(-150%)}82%,100%{transform:translateX(150%)}}
+@keyframes steam{50%{transform:translateY(-12px);opacity:.48}}
+@keyframes heroTextReveal{0%{clip-path:inset(0 100% 0 0)}100%{clip-path:inset(0 0% 0 0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(60px)}to{opacity:1;transform:none}}
+@keyframes slideLeft{from{opacity:0;transform:translateX(-80px)}to{opacity:1;transform:none}}
+@keyframes bounceIn{0%{opacity:0;transform:scale(.3)}50%{transform:scale(1.05)}70%{transform:scale(.9)}100%{opacity:1;transform:none}}
+@keyframes elasticIn{0%{opacity:0;transform:scale(0)}50%{opacity:1;transform:scale(1.1)}70%{transform:scale(.95)}100%{transform:scale(1)}}
+@keyframes decorativeFloat{0%,100%{transform:translate(0,0) rotate(0deg)}33%{transform:translate(10px,-15px) rotate(5deg)}66%{transform:translate(-8px,10px) rotate(-3deg)}}
+
+/* Hero Animations */
+.hero-text{animation:slideUp .8s var(--ease-expo) .3s both}
+.hero-actions{animation:slideUp .8s var(--ease-expo) .5s both}
+.hero .eyebrow{animation:slideLeft .6s var(--ease-expo) .1s both}
+.hero h1{animation:heroTextReveal 1s var(--ease-expo) .2s both}
+
+/* Decorative */
+.hero-decor{position:absolute;pointer-events:none}
+.hero-decor-1{top:20%;right:5%;width:80px;height:80px;border:2px solid var(--gold)30;border-radius:50%;animation:decorativeFloat 8s ease-in-out infinite}
+.hero-decor-2{bottom:30%;left:3%;width:60px;height:60px;border:2px solid var(--gold)20;border-radius:50%;animation:decorativeFloat 10s ease-in-out infinite reverse}
+
+/* Button Ripple */
+.btn-ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.3);transform:scale(0);animation:ripple .6s linear;pointer-events:none}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+
+/* Food Hover Label */
+.food::after{content:"VIEW MENU";position:absolute;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--gold);color:var(--maroon);font:700 .7rem var(--mono);letter-spacing:.1em;padding:10px 20px;border-radius:30px;opacity:0;transition:all .4s var(--ease-expo);pointer-events:none;white-space:nowrap}
+.food:hover::after{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* Reduced Motion */
+@media(prefers-reduced-motion:reduce){
+*,*:before,*:after{animation-duration:0.01ms!important;animation-iteration-count:1!important;transition-duration:0.01ms!important}
+main>.section,[data-reveal]{opacity:1;transform:none}
+.cursor,.cursor-follower,.loader,.noise,.float-shapes{display:none}
+}
+
+/* Mobile */
+@media(max-width:760px){
+.wrap{width:min(100% - 32px,1230px)}
+.cursor,.cursor-follower{display:none}
+.nav{height:70px}
+.links,.call{display:none}
+.hamb{display:block}
+.mobile{position:fixed;z-index:8;inset:70px 0 auto;background:var(--paper);padding:17px 24px 25px;box-shadow:0 15px 20px #321b1614}
+.mobile:not(.open){display:none}
+.mobile a{display:block;padding:12px 0;font:600 1.55rem var(--serif);color:var(--maroon)}
+.hero{min-height:0;padding-top:103px}
+.hero-grid,.welcome,.story-grid,.service-grid{grid-template-columns:1fr}
+.hero-photo{height:385px;width:85%;margin:25px auto 0}
+.seal{width:108px;height:108px;right:-15px;bottom:24px;font-size:.86rem}
+.section{padding:74px 0}
+.section-head{align-items:start;flex-direction:column;gap:14px}
+.food-grid{grid-template-columns:1fr}
+.food-pic{height:370px}
+.story-photo img{height:390px}
+.facts{gap:18px}
+.fact strong{font-size:1.65rem}
+.service-card{padding:28px}
+.hours-grid{grid-template-columns:1fr}
+.address{flex-direction:column;gap:12px}
+.address a{align-self:start}
+.foot-top,.foot-bottom{flex-direction:column}
+.foot-links{gap:34px}
+.foot-bottom{gap:8px}
+}
+</style>
+</head>
+<body>
+
+<!-- Page Loader -->
+<div class="loader" id="loader">
+<div class="loader-text" id="loaderText"></div>
+<div class="loader-bar"></div>
+</div>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cursor"></div>
+<div class="cursor-follower" id="follower"></div>
+
+<!-- Noise Overlay -->
+<div class="noise"></div>
+
+<!-- Floating Shapes -->
+<div class="float-shapes">
+<div class="float-shape"></div>
+<div class="float-shape"></div>
+<div class="float-shape"></div>
+</div>
+
+<header id="header">
+<nav class="nav wrap">
+<a class="brand" href="#top">
+<div class="brand-text">
+<span class="brand-name">Vempa Raju</span>
+<span class="brand-sub">Gari Vantillu</span>
+</div>
+</a>
+<div class="links">
+<a href="#specials"><span>Biryani</span></a>
+<a href="#story"><span>Our place</span></a>
+<a href="#services"><span>Services</span></a>
+<a href="#visit"><span>Visit</span></a>
+</div>
+<a class="call" href="#visit"><span>Find us ↗</span></a>
+<button class="hamb" id="hamb" aria-label="Open menu"><i></i><i></i><i></i></button>
+</nav>
+<div class="mobile" id="mobile">
+<a href="#specials">Biryani</a>
+<a href="#story">Our place</a>
+<a href="#services">Services</a>
+<a href="#visit">Visit</a>
+</div>
+</header>
+
+<main id="top">
+<section class="hero">
+<div class="wrap hero-grid">
+<div data-reveal>
+<p class="eyebrow">Balusumudi · Bhimavaram</p>
+<h1>Every plate.<br>Full of <em>flavour.</em></h1>
+<p class="hero-text">Come for the biryani, stay for the feeling. A beloved Bhimavaram stop for generous portions, fragrant rice and food worth gathering around.</p>
+<div class="hero-actions">
+<a class="btn btn-gold" href="#specials"><span>Explore the biryani</span> <i>→</i></a>
+<a class="btn btn-maroon" href="#visit"><span>Get directions</span></a>
+</div>
+</div>
+<div class="hero-photo" data-reveal>
+<img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=1100&q=80" alt="Hyderabadi Dum Biryani with saffron rice and tender meat">
+<span class="seal">Bhimavaram's<br>vantillu<br>time</span>
+</div>
+<div class="hero-decor hero-decor-1"></div>
+<div class="hero-decor hero-decor-2"></div>
+</div>
+<div class="stripe"></div>
+</section>
+
+<div class="ticker">
+<span>AROMATIC RICE <b>✦</b> BOLD ANDHRA FLAVOURS <b>✦</b> MADE FOR SHARING <b>✦</b> AROMATIC RICE <b>✦</b> BOLD ANDHRA FLAVOURS <b>✦</b> MADE FOR SHARING <b>✦</b></span>
+</div>
+
+<!-- PROMINENT LOGO SECTION -->
+<section class="logo-section">
+<div class="wrap">
+<div class="logo-showcase" data-reveal="scale">
+<div class="logo-text-display">
+<span class="logo-vempa">VEMPA RAJU</span>
+<span class="logo-gari">GARI VANTILLU</span>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section wrap welcome">
+<p class="eyebrow" data-reveal>Since the first spoonful</p>
+<div data-reveal>
+<h2 class="title">The kind of biryani you remember long after the meal.</h2>
+<p>At Vempa Raju Gari Vantillu, the focus is simple: memorable biryani, welcoming service and a table for everyone—from quick lunches to a full family feast.</p>
+</div>
+</section>
+
+<section class="section specials" id="specials">
+<div class="wrap">
+<div class="section-head" data-reveal>
+<div>
+<p class="eyebrow">Our Famous Menu</p>
+<h2 class="title">Made for biryani lovers.</h2>
+</div>
+<a href="#visit" class="link">Open 11am–11pm →</a>
+</div>
+<div class="food-grid">
+<article class="food" data-reveal="scale">
+<div class="food-pic">
+<img src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=900&q=80" alt="Dupudu Gorre Biryani - Famous Andhra style mutton biryani">
+</div>
+<span class="number">01</span>
+<div class="food-info">
+<div><h3>Dupudu Gorre Biryani</h3><p>Our legendary Andhra-style mutton biryani · slow-cooked to perfection</p></div>
+<span class="tag">MOST FAMOUS</span>
+</div>
+</article>
+<article class="food" data-reveal="scale">
+<div class="food-pic">
+<img src="https://images.unsplash.com/photo-1631515243349-e0cb75fb8d8a?auto=format&fit=crop&w=900&q=80" alt="Chicken Biryani with aromatic herbs and spices">
+</div>
+<span class="number">02</span>
+<div class="food-info">
+<div><h3>Chicken Biryani</h3><p>Fragrant basmati rice layered with tender chicken</p></div>
+<span class="tag">POPULAR</span>
+</div>
+</article>
+<article class="food" data-reveal="scale">
+<div class="food-pic">
+<img src="https://images.unsplash.com/photo-1642821373181-696a54913e93?auto=format&fit=crop&w=900&q=80" alt="Veg Biryani with fresh vegetables and raita">
+</div>
+<span class="number">03</span>
+<div class="food-info">
+<div><h3>Veg Biryani</h3><p>Fresh garden vegetables with aromatic rice and raita</p></div>
+<span class="tag">VEG SPECIAL</span>
+</div>
+</article>
+</div>
+<div class="menu-extra" data-reveal>
+<div class="menu-item"><span class="menu-name">Mutton Biryani</span><span class="menu-dots"></span><span class="menu-price">₹</span></div>
+<div class="menu-item"><span class="menu-name">Egg Biryani</span><span class="menu-dots"></span><span class="menu-price">₹</span></div>
+<div class="menu-item"><span class="menu-name">Prawns Biryani</span><span class="menu-dots"></span><span class="menu-price">₹</span></div>
+<div class="menu-item"><span class="menu-name">Chicken Fry Piece Biryani</span><span class="menu-dots"></span><span class="menu-price">₹</span></div>
+<div class="menu-item"><span class="menu-name">Mutton Fry Piece Biryani</span><span class="menu-dots"></span><span class="menu-price">₹</span></div>
+<div class="menu-item"><span class="menu-name">Boneless Chicken Biryani</span><span class="menu-dots"></span><span class="menu-price">₹</span></div>
+</div>
+<p class="note">Dupudu Gorre Biryani is our signature dish — recommended by diners every Sunday &amp; Wednesday. Call ahead for special orders.</p>
+</div>
+</section>
+
+<section class="section story" id="story">
+<div class="wrap story-grid">
+<div class="story-photo" data-reveal="left">
+<img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=1050&q=80" alt="Traditional Andhra biryani being served">
+</div>
+<div data-reveal="right">
+<p class="eyebrow">A Bhimavaram favourite</p>
+<h2 class="title">Good biryani brings everyone to the table.</h2>
+<p>Located in Balusumudi, we welcome locals, families and visitors looking for a delicious meal with the warmth of Andhra hospitality.</p>
+<div class="facts">
+<div class="fact"><strong>3.9</strong><span>rating across 788 ratings</span></div>
+<div class="fact"><strong>7 days</strong><span>serving every week</span></div>
+<div class="fact"><strong>11pm</strong><span>open until nightly</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section service" id="services">
+<div class="wrap">
+<div class="section-head" data-reveal>
+<div>
+<p class="eyebrow">Your way, your meal</p>
+<h2 class="title">However you're hungry.</h2>
+</div>
+</div>
+<div class="service-grid">
+<article class="service-card" data-reveal="left">
+<b>01</b>
+<h3>Dine in</h3>
+<p>Bring the family or the whole group and settle in for lunch or dinner together.</p>
+</article>
+<article class="service-card" data-reveal="right">
+<b>02</b>
+<h3>Take away &amp; delivery</h3>
+<p>Take your biryani home or choose delivery when comfort calls.</p>
+</article>
+<article class="service-card" data-reveal="left">
+<b>03</b>
+<h3>Drive-through</h3>
+<p>A convenient pick-up option for delicious food on the move.</p>
+</article>
+<article class="service-card" data-reveal="right">
+<b>04</b>
+<h3>Group friendly</h3>
+<p>A welcoming place for kids, families and hungry gatherings.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section hours-section" id="hours">
+<div class="wrap">
+<div class="section-head" data-reveal>
+<div>
+<p class="eyebrow">Plan your visit</p>
+<h2 class="title">Opening hours.</h2>
+</div>
+</div>
+<div class="hours-grid" data-reveal>
+<div class="hours-card">
+<span class="day">Monday – Saturday</span>
+<h3>Weekdays</h3>
+<span class="time">11:00 AM – 11:00 PM</span>
+<p class="note-text">Lunch &amp; dinner served all day</p>
+</div>
+<div class="hours-card">
+<span class="day">Sunday &amp; Public Holidays</span>
+<h3>Weekends</h3>
+<span class="time">11:00 AM – 11:00 PM</span>
+<p class="note-text">Dupudu Gorre Biryani special available</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section visit" id="visit">
+<div class="wrap" data-reveal="scale">
+<p class="eyebrow">Come over hungry</p>
+<h2 class="title">Your biryani stop in the heart of Bhimavaram.</h2>
+<p>Open every day for lunch, dinner, dine-in, takeaway and delivery.</p>
+<a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Vempa+Raju+Gari+Biryani+Balusumudi+Bhimavaram" target="_blank" rel="noopener"><span>Get directions</span> <i>→</i></a>
+<div class="address">
+<div>
+<strong>Vempa Raju Gari Vantillu</strong>
+<span>Door No. 27-2-1, Balusumoodi, near Padmalaya Theatre,<br>Balusumudi, Bhimavaram – 534202, Andhra Pradesh</span>
+</div>
+<a href="https://www.justdial.com/Bhimavaram/Vempa-Raju-Gari-Biryani-Balusumoodi-Balusumudi/9999P8816-8816-220204155408-W8Y4_BZDET" target="_blank" rel="noopener">View listing ↗</a>
+</div>
+<div class="plate-art" aria-hidden="true"></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="foot-top">
+<div>
+<a class="brand" href="#top">
+<div class="brand-text">
+<span class="brand-name" style="color:var(--cream)">Vempa Raju</span>
+<span class="brand-sub">Gari Vantillu</span>
+</div>
+</a>
+<p class="foot-title">The flavour Bhimavaram comes back for.</p>
+</div>
+<div class="foot-links">
+<div>
+<h4>Visit</h4>
+<a href="#visit">Balusumudi, Bhimavaram</a><br>
+<a href="#hours">Mon–Sat · 11am–11pm</a><br>
+<a href="#hours">Sunday · 11am–11pm</a>
+</div>
+<div>
+<h4>Order</h4>
+<a href="#services">Dine-in &amp; takeaway</a><br>
+<a href="#services">Delivery available</a>
+</div>
+</div>
+</div>
+<div class="foot-bottom">
+<span>© 2026 Vempa Raju Gari Vantillu</span>
+<span>Made for every hungry moment</span>
+</div>
+</div>
+</footer>
+
+<script>
+// Page Loader
+(function(){
+const loader=document.getElementById('loader');
+const loaderText=document.getElementById('loaderText');
+"Vempa Raju Gari Vantillu".split('').forEach((char,i)=>{
+const span=document.createElement('span');
+span.textContent=char===' '?'\u00A0':char;
+span.style.animationDelay=`${i*0.04}s`;
+loaderText.appendChild(span);
+});
+setTimeout(()=>{loader.classList.add('done');document.body.style.overflow='';initAnimations()},2200);
+})();
+
+// Custom Cursor
+const cursor=document.getElementById('cursor');
+const follower=document.getElementById('follower');
+let mouseX=0,mouseY=0,followX=0,followY=0;
+document.addEventListener('mousemove',e=>{mouseX=e.clientX;mouseY=e.clientY});
+(function animateCursor(){
+followX+=(mouseX-followX)*.18;
+followY+=(mouseY-followY)*.18;
+cursor.style.left=mouseX-6+'px';
+cursor.style.top=mouseY-6+'px';
+follower.style.left=followX-2.5+'px';
+follower.style.top=followY-2.5+'px';
+requestAnimationFrame(animateCursor);
+})();
+if(window.innerWidth>760){
+document.querySelectorAll('a,button,.food,.service-card').forEach(el=>{
+el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));
+el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'));
+});
+}
+
+// Header scroll
+const header=document.getElementById('header');
+const hamb=document.getElementById('hamb');
+const mobile=document.getElementById('mobile');
+addEventListener('scroll',()=>header.classList.toggle('scrolled',scrollY>18));
+hamb.onclick=()=>mobile.classList.toggle('open');
+mobile.querySelectorAll('a').forEach(a=>a.onclick=()=>mobile.classList.remove('open'));
+
+// Animations - REPEATING
+function initAnimations(){
+document.querySelector('.hero').classList.add('loaded');
+
+// Reveal - REPEATING
+const revealObs=new IntersectionObserver(es=>es.forEach(e=>{
+e.target.classList.toggle('in',e.isIntersecting);
+}),{threshold:.14,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('[data-reveal]').forEach(e=>revealObs.observe(e));
+
+// Section slide - REPEATING
+const secObs=new IntersectionObserver(es=>es.forEach(e=>{
+e.target.classList.toggle('slide-active',e.isIntersecting);
+}),{threshold:.15,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('main>.section').forEach(e=>secObs.observe(e));
+
+// Counter - REPEATING
+const factObs=new IntersectionObserver(es=>es.forEach(e=>{
+if(e.isIntersecting){
+const s=e.target.querySelector('strong');
+if(s){
+const orig=s.dataset.orig||s.textContent;
+s.dataset.orig=orig;
+const num=parseFloat(orig);
+if(!isNaN(num)){
+let cur=0;
+const inc=num/50;
+const t=setInterval(()=>{
+cur+=inc;
+if(cur>=num){cur=num;clearInterval(t)}
+s.textContent=Math.floor(cur)+orig.replace(/[\d.]+/,'');
+},30);
+}
+}
+}
+}),{threshold:.5});
+document.querySelectorAll('.fact').forEach(e=>factObs.observe(e));
+
+// Images fade
+const imgObs=new IntersectionObserver(es=>es.forEach(e=>{
+e.target.style.opacity=e.isIntersecting?'1':'0';
+e.target.style.transform=e.isIntersecting?'scale(1)':'scale(1.05)';
+}),{threshold:.1});
+document.querySelectorAll('.food-pic img,.story-photo img,.hero-photo img').forEach(img=>{
+img.style.cssText='opacity:0;transform:scale(1.05);transition:opacity .8s var(--ease-expo),transform .8s var(--ease-expo)';
+imgObs.observe(img);
+});
+
+// Magnetic buttons
+document.querySelectorAll('.btn').forEach(btn=>{
+btn.addEventListener('mousemove',e=>{
+const r=btn.getBoundingClientRect();
+btn.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.15}px,${(e.clientY-r.top-r.height/2)*.15}px)`;
+});
+btn.addEventListener('mouseleave',()=>btn.style.transform='');
+});
+
+// Text scramble
+document.querySelectorAll('.links a').forEach(link=>{
+link.addEventListener('mouseenter',function(){
+const orig=this.querySelector('span').textContent;
+const chars='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+let i=0;
+const iv=setInterval(()=>{
+this.querySelector('span').textContent=orig.split('').map((c,j)=>j<i?orig[j]:chars[Math.floor(Math.random()*26)]).join('');
+i+=.5;
+if(i>=orig.length){clearInterval(iv);this.querySelector('span').textContent=orig;}
+},30);
+});
+});
+
+// Card tilt
+document.querySelectorAll('.food,.service-card').forEach(card=>{
+card.addEventListener('mousemove',e=>{
+const r=card.getBoundingClientRect();
+const x=(e.clientX-r.left)/r.width-.5;
+const y=(e.clientY-r.top)/r.height-.5;
+card.style.transform=`perspective(800px) rotateY(${x*8}deg) rotateX(${-y*8}deg) translateY(-12px)`;
+});
+card.addEventListener('mouseleave',()=>card.style.transform='');
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+a.addEventListener('click',function(e){
+e.preventDefault();
+const t=document.querySelector(this.getAttribute('href'));
+if(t)window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-80,behavior:'smooth'});
+});
+});
+
+// Button ripple
+document.querySelectorAll('.btn').forEach(btn=>{
+btn.addEventListener('click',function(e){
+const r=this.getBoundingClientRect();
+const rip=document.createElement('span');
+rip.className='btn-ripple';
+rip.style.left=(e.clientX-r.left)+'px';
+rip.style.top=(e.clientY-r.top)+'px';
+this.appendChild(rip);
+setTimeout(()=>rip.remove(),600);
+});
+});
+}
+
+// Hero parallax
+document.querySelector('.hero')?.addEventListener('mousemove',e=>{
+const r=e.currentTarget.getBoundingClientRect();
+const x=(e.clientX-r.left)/r.width-.5;
+const y=(e.clientY-r.top)/r.height-.5;
+const p=document.querySelector('.hero-photo img');
+if(p)p.style.transform=`scale(1.02) translate(${x*15}px,${y*15}px)`;
+const s=document.querySelector('.seal');
+if(s)s.style.transform=`rotate(${13+x*8}deg) translate(${x*5}px,${y*5}px)`;
+});
+</script>
+</body>
+</html>
